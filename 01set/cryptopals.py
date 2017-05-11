@@ -25,6 +25,7 @@ class Crypto:
                 b[i] ^= a[i]
             return b
     def single_xor(self, x, y):
+
         a = bytearray.fromhex(x)
         b = ord(y)
         # b.extend(map(ord, self.letters))
@@ -39,3 +40,13 @@ class Crypto:
             string_score += self.score[self.letters[i].lower()]*count
         # print(string_score)
         return string_score
+    def repeat_key(self, x, key):
+        i = 0
+        out = ''
+        while(i < len(x)):
+            for j in range(len(key)):
+                out += chr((ord(x[i])^ord(key[j])))
+                i += 1
+                if i <=len(x):
+                    break;
+        print(bytearray(out))
