@@ -31,7 +31,7 @@ class Crypto:
         for i in range(len(a)):
             a[i] ^= b
         # print(chr(b) + ": " + a.decode("utf-8"))
-        return a.decode("utf-8")    # Debug
+        return a.decode("utf-8", 'backslashreplace')
     def scorer(self, s):
         string_score = 0
         for i in range(len(self.letters)):
